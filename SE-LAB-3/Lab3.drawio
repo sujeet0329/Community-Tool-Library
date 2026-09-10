@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" modified="2026-09-10T18:03:00.000Z" agent="Mozilla/5.0" version="26.0.0">
+<diagram id="Lab3" name="Lab3">
+<mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+<root>
+<mxCell id="0"/><mxCell id="1" parent="0"/>
+<mxCell id="title" value="Self-Service Coffee Kiosk System - Layered Architecture&lt;br&gt;Sujeet V Bire | PES1UG24CS716" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;" vertex="1" parent="1"><mxGeometry x="350" y="15" width="470" height="50" as="geometry"/></mxCell>
+
+<mxCell id="pres" value="Presentation Layer" style="swimlane;html=1;rounded=1;horizontal=1;startSize=28;fillColor=none;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="80" width="1080" height="150" as="geometry"/></mxCell>
+<mxCell id="bus" value="Business Layer" style="swimlane;html=1;rounded=1;horizontal=1;startSize=28;fillColor=none;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="250" width="1080" height="300" as="geometry"/></mxCell>
+<mxCell id="data" value="Data Layer" style="swimlane;html=1;rounded=1;horizontal=1;startSize=28;fillColor=none;strokeColor=#000000;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="580" width="1080" height="150" as="geometry"/></mxCell>
+
+<mxCell id="ui" value="&lt;&lt;component&gt;&gt;&lt;br&gt;User Interface&lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f3f3;strokeColor=#000000;" vertex="1" parent="pres"><mxGeometry x="460" y="55" width="160" height="65" as="geometry"/></mxCell>
+<mxCell id="om" value="&lt;&lt;component&gt;&gt;&lt;br&gt;Order Manager&lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f3f3;strokeColor=#000000;" vertex="1" parent="bus"><mxGeometry x="460" y="75" width="160" height="70" as="geometry"/></mxCell>
+<mxCell id="ps" value="&lt;&lt;component&gt;&gt;&lt;br&gt;Payment Service&lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f3f3;strokeColor=#000000;" vertex="1" parent="bus"><mxGeometry x="180" y="175" width="170" height="70" as="geometry"/></mxCell>
+<mxCell id="rp" value="&lt;&lt;component&gt;&gt;&lt;br&gt;Receipt Printer&lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f3f3;strokeColor=#000000;" vertex="1" parent="bus"><mxGeometry x="730" y="175" width="170" height="70" as="geometry"/></mxCell>
+<mxCell id="db" value="&lt;&lt;component&gt;&gt;&lt;br&gt;Database&lt;br&gt;Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f3f3;strokeColor=#000000;" vertex="1" parent="data"><mxGeometry x="460" y="55" width="160" height="65" as="geometry"/></mxCell>
+
+<mxCell id="oi" value="Order Interface" style="shape=umlProvidedInterface;html=1;" vertex="1" parent="1"><mxGeometry x="535" y="215" width="20" height="20" as="geometry"/></mxCell>
+<mxCell id="pi" value="Payment Interface" style="shape=umlProvidedInterface;html=1;" vertex="1" parent="1"><mxGeometry x="340" y="410" width="20" height="20" as="geometry"/></mxCell>
+<mxCell id="ri" value="Receipt Interface" style="shape=umlProvidedInterface;html=1;" vertex="1" parent="1"><mxGeometry x="720" y="410" width="20" height="20" as="geometry"/></mxCell>
+<mxCell id="di" value="Database Interface" style="shape=umlProvidedInterface;html=1;" vertex="1" parent="1"><mxGeometry x="535" y="550" width="20" height="20" as="geometry"/></mxCell>
+<mxCell id="pdi" value="Payment Data Interface" style="shape=umlProvidedInterface;html=1;" vertex="1" parent="1"><mxGeometry x="330" y="550" width="20" height="20" as="geometry"/></mxCell>
+
+<mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="ui" target="oi"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="oi" target="om"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e3" value="Payment Interface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="om" target="pi"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="pi" target="ps"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e5" value="Receipt Interface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="om" target="ri"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="ri" target="rp"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e7" value="Database Interface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="om" target="di"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="di" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e9" value="Payment Data Interface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="ps" target="pdi"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="pdi" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<mxCell id="d1" value="&lt;&lt;use&gt;&gt; Order details" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="ui" target="om"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="d2" value="&lt;&lt;use&gt;&gt; Payment request" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="om" target="ps"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="d3" value="&lt;&lt;use&gt;&gt; Print receipt" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="om" target="rp"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="d4" value="&lt;&lt;use&gt;&gt; Menu &amp; pricing query" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="om" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="d5" value="&lt;&lt;use&gt;&gt; Payment data" style="dashed=1;endArrow=block;html=1;" edge="1" parent="1" source="ps" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+</root></mxGraphModel>
+</diagram>
+</mxfile>
